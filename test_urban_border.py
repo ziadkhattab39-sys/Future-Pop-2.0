@@ -1,22 +1,16 @@
 from Urban import Urban
 from Border import Border
 
-cairo = Urban(
-    name="Cairo", capital="Cairo",
-    pop0=9500000, pop1=9850000, pop2=10200000, pop3=10560000, pop4=10920000,
-    area=3085, type_="Urban"
-)
-cairo.service_ratio()
-print("Cairo school number:", cairo.school_number)
-print("Cairo hospital number:", cairo.hospital_number)
-print("Cairo fire station number:", cairo.fire_station_number)
+cairo = Urban("Cairo", "Cairo", "Urban", 9500000, 9850000, 10200000, 10560000, 10920000, 3085)
+cairo.Calc_Pop_Density()
+cairo.Calc_Pop_Growth_Rate()
+cairo.Service_Ratio()
+print("Cairo schools:", cairo.School_Number)
+print("Cairo hospitals:", cairo.Hospital_Number)
 
-sinai = Border(
-    name="North Sinai", capital="Arish",
-    pop0=450000, pop1=451000, pop2=448000, pop3=447000, pop4=447500,
-    area=27564, type_="Border"
-)
-sinai.service_ratio()
-print("\nNorth Sinai school number:", sinai.school_number)
-print("North Sinai hospital number:", sinai.hospital_number)
-print("North Sinai fire station number:", sinai.fire_station_number)
+sinai = Border("North Sinai", "Arish", "Border", 450000, 451000, 448000, 447000, 447500, 27564)
+sinai.Calc_Pop_Density()
+sinai.Calc_Pop_Growth_Rate()
+sinai.Service_Ratio()
+print("\nSinai schools:", sinai.School_Number)
+print("Sinai hospitals:", sinai.Hospital_Number)

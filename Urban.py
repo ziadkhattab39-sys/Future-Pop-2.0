@@ -1,43 +1,22 @@
 from Governorate import Governorate
-
-
+ 
+ 
 class Urban(Governorate):
-    def __init__(
-        self,
-        name: str,
-        capital: str,
-        pop0: int,
-        pop1: int,
-        pop2: int,
-        pop3: int,
-        pop4: int,
-        area: int,
-        type_: str,
-    ):
-        super().__init__(name=name, capital=capital, area=area, type_=type_)
-        self.pop_count[0] = pop0
-        self.pop_count[1] = pop1
-        self.pop_count[2] = pop2
-        self.pop_count[3] = pop3
-        self.pop_count[4] = pop4
-        self.school_ratio = 9000.0
-        self.hospital_ratio = 55000.0
-        self.police_ratio = 35000.0
-        self.ambulance_ratio = 60000.0
-        self.fire_station_ratio = 70000.0
-
-    def service_ratio(self) -> None:
-        urban_school = self.pop_count[4] / self.school_ratio
-        self.school_number = int(urban_school)
-
-        urban_hospital = self.pop_count[4] / self.hospital_ratio
-        self.hospital_number = int(urban_hospital)
-
-        urban_police = self.pop_count[4] / self.police_ratio
-        self.police_number = int(urban_police)
-
-        urban_ambulance = self.pop_count[4] / self.ambulance_ratio
-        self.ambulance_number = int(urban_ambulance)
-
-        urban_fire = self.pop_count[4] / self.fire_station_ratio
-        self.fire_station_number = int(urban_fire)
+    def __init__(self, name, capital, type, pop2018, pop2020, pop2022, pop2024, pop2026, area):
+        super().__init__(name, capital, type, pop2018, pop2020, pop2022, pop2024, pop2026, area)
+ 
+        self.School_Ratio = 9000.0
+        self.Hospital_Ratio = 55000.0
+        self.Police_Ratio = 35000.0
+        self.Ambulance_Ratio = 60000.0
+        self.Fire_Station_Ratio = 70000.0
+ 
+    def Service_Ratio(self):
+        latest_pop = self.Pop_Count[4]
+ 
+        self.School_Number = int(latest_pop / self.School_Ratio)
+        self.Hospital_Number = int(latest_pop / self.Hospital_Ratio)
+        self.Police_Number = int(latest_pop / self.Police_Ratio)
+        self.Ambulance_Number = int(latest_pop / self.Ambulance_Ratio)
+        self.Fire_Station_Number = int(latest_pop / self.Fire_Station_Ratio)
+ 
