@@ -2,38 +2,27 @@ from Governorate import Governorate
 
 
 class Mixed(Governorate):
-    def __init__(
-        self,
-        name: str,
-        capital: str,
-        pop0: int,
-        pop1: int,
-        pop2: int,
-        pop3: int,
-        pop4: int,
-        area: int,
-        type_: str,
-    ):
-        super().__init__(name=name, capital=capital, area=area, type_=type_)
-        self.pop_count[0] = pop0
-        self.pop_count[1] = pop1
-        self.pop_count[2] = pop2
-        self.pop_count[3] = pop3
-        self.pop_count[4] = pop4
-        self.school_ratio = 7500.0
-        self.hospital_ratio = 42500.0
-        self.police_ratio = 31000.0
-        self.ambulance_ratio = 55000.0
+    def __init__(self, name, capital, type, pop2018, pop2020, pop2022, pop2024, pop2026, area):
+        super().__init__(name, capital, type, pop2018, pop2020, pop2022, pop2024, pop2026, area)
 
-    def service_ratio(self) -> None:
-        mixed_school = self.pop_count[4] / self.school_ratio
-        self.school_number = int(mixed_school)
+        self.School_Ratio = 4000.0
+        self.Hospital_Ratio = 70000.0
+        self.Police_Ratio = 40000.0
+        self.Ambulance_Ratio = 55000.0
+        self.Fire_Station_Ratio = 20000.0
 
-        mixed_hospital = self.pop_count[4] / self.hospital_ratio
-        self.hospital_number = int(mixed_hospital)
+    def Service_Ratio(self) -> None:
+        mixed_school = self.Pop_Count[4] / self.School_Ratio
+        self.School_Number = int(mixed_school)
 
-        mixed_police = self.pop_count[4] / self.police_ratio
-        self.police_number = int(mixed_police)
+        mixed_hospital = self.Pop_Count[4] / self.Hospital_Ratio
+        self.Hospital_Number = int(mixed_hospital)
 
-        mixed_ambulance = self.pop_count[4] / self.ambulance_ratio
-        self.ambulance_number = int(mixed_ambulance)
+        mixed_police = self.Pop_Count[4] / self.Police_Ratio
+        self.Police_Number = int(mixed_police)
+
+        mixed_ambulance = self.Pop_Count[4] / self.Ambulance_Ratio
+        self.Ambulance_Number = int(mixed_ambulance)
+
+        mixed_fire_Stations = self.Pop_Count[4] / self.Fire_Station_Ratio
+        self.Fire_Station_Number = int(mixed_fire_Stations)
