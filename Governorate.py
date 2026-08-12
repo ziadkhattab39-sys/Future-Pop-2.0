@@ -15,6 +15,13 @@ class Governorate :
         self.Pred_Growth_Rate = []
         self.Pred_Pop_Count = []
 
+        ### Services (يتحدد في كل subclass)
+        self.School_Number = 0
+        self.Hospital_Number = 0
+        self.Police_Number = 0
+        self.Ambulance_Number = 0
+        self.Fire_Station_Number = 0
+
     def Calc_Pop_Density (self) :
         for i in range(5) :
             Density = self.Pop_Count[i] / self.Area
@@ -42,3 +49,10 @@ class Governorate :
         Pop2030 = (1 + self.Pred_Growth_Rate[1]) * Pop2028
         Pop2032 = (1 + self.Pred_Growth_Rate[2]) * Pop2030
         self.Pred_Pop_Count = [int(Pop2028), int(Pop2030), int(Pop2032)]
+
+    def Show_Info (self) :
+        print(f"""
+Governorate Name: {self.Gov_Name}
+Governorate Type: {self.Gov_Type}
+Governorate Area: {self.Area}
+""")
