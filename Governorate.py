@@ -21,6 +21,13 @@ class Governorate :
         self.Police_Number = 0
         self.Ambulance_Number = 0
         self.Fire_Station_Number = 0
+        ### Future Service
+        self.Future_School_Number = []
+        self.Future_Hospital_Number = []
+        self.Future_Police_Number = []
+        self.Future_Ambulance_Number = []
+        self.Future_Fire_Station_Number = []
+        
 
         ### Risk Analysis
         self.DENSITY_RISK_THRESHOLD = 2500

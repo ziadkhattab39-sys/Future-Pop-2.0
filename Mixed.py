@@ -31,12 +31,6 @@ class Mixed(Governorate):
         if not self.Pred_Pop_Count:
             raise ValueError("Predicted population has not been calculated yet.")
 
-        self.Future_School_Number = []
-        self.Future_Hospital_Number = []
-        self.Future_Police_Number = []
-        self.Future_Ambulance_Number = []
-        self.Future_Fire_Station_Number = []
-
         for future_pop in self.Pred_Pop_Count:
             self.Future_School_Number.append(int(future_pop / self.School_Ratio))
             self.Future_Hospital_Number.append(int(future_pop / self.Hospital_Ratio))
