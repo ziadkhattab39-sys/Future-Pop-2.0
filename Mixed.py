@@ -26,3 +26,20 @@ class Mixed(Governorate):
 
         mixed_fire_Stations = self.Pop_Count[4] / self.Fire_Station_Ratio
         self.Fire_Station_Number = int(mixed_fire_Stations)
+
+    def Future_Service(self):
+        if not self.Pred_Pop_Count:
+            raise ValueError("Predicted population has not been calculated yet.")
+
+        self.Future_School_Number = []
+        self.Future_Hospital_Number = []
+        self.Future_Police_Number = []
+        self.Future_Ambulance_Number = []
+        self.Future_Fire_Station_Number = []
+
+        for future_pop in self.Pred_Pop_Count:
+            self.Future_School_Number.append(int(future_pop / self.School_Ratio))
+            self.Future_Hospital_Number.append(int(future_pop / self.Hospital_Ratio))
+            self.Future_Police_Number.append(int(future_pop / self.Police_Ratio))
+            self.Future_Ambulance_Number.append(int(future_pop / self.Ambulance_Ratio))
+            self.Future_Fire_Station_Number.append(int(future_pop / self.Fire_Station_Ratio))
